@@ -1,0 +1,79 @@
+<!-- 新建按钮 -->
+<view class="newBtn" wx:if='{{authority}}'>
+  <van-button
+  type="primary" 
+  size="large"
+  plain
+  round
+  bindtap="showPopup"
+  >新建留言板</van-button>
+</view>
+<text class='remind' style="margin:30rpx">留言评论请文明用语</text>
+
+<!-- 新建弹窗 -->
+<van-popup
+  show="{{ show }}" 
+  bind:close="onClose"
+  position="top"
+  custom-style="height: 50%;"
+  round
+  closeable
+ >
+  <form bindsubmit="onSubmit">
+    <view class="writeView">
+      <van-cell title="创建留言板"/>
+      <view class="textArea">
+        <textarea
+          value="{{textValue}}"
+          style="height: 2em" 
+          placeholder="请输入页面标题" 
+          placeholder-style="color:gray;"
+          name="pageName"/>
+      </view>
+      <view class="textArea">
+        <textarea
+          value="{{textValue}}"
+          style="height: 3em" 
+          placeholder="请输入页面描述" 
+          placeholder-style="color:gray;"
+          name="pageDiscribe"/>
+      </view>
+    </view>
+    <view class='submitBtnView'>
+      <button type="primary" formType="submit" plain="true">确认</button>
+    </view>
+  </form>
+</van-popup>
+<!-- 轮播图页面列表 -->
+<swiper class='lunbo' indicator-dots="true" autoplay="true" interval="3000" circular="true">
+<swiper-item>
+<image src="/image/yihan0.jpg"></image>
+</swiper-item>
+<swiper-item>
+<image src="/image/yihan.jpg"></image>
+</swiper-item>
+<swiper-item>
+<image src="/image/yihan1.jpg"></image>
+</swiper-item>
+</swiper>
+
+<navigator url="../about/about">
+    <van-cell title="留言墙小程序合作" label="留言小程序，助力于打通作者与粉丝的交流，有兴趣的朋友可以合作，非诚勿扰"/>
+  </navigator> <!-- -->
+
+<!-- 页面列表 -->
+<van-skeleton
+  title
+  row="10"
+  loading="{{loading}}"
+>
+
+
+  <block wx:for='{{pageList}}' wx:key="_id" wx:if='{{authority}}'> 
+   <!--wx:if='{{authority}}' 判断是否需要管理员才显示列表-->
+    <navigator url="../msgPages/msgPages?id={{item._id}}">
+      <van-cell title="{{item.name}}" label="{{item.discribe}}"/>
+    </navigator>
+  </block>
+</van-skeleton>
+
