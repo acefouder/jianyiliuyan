@@ -27,14 +27,12 @@
 	"libVersion": "2.8.1",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
-
-"permissions": {
-"openapi": [
-  "subscribeMessage.send",
-  "security.msgSecCheck"
-]
-},
-
+	"permissions": {
+		"openapi": [
+			"subscribeMessage.send",
+			"security.msgSecCheck"
+		]
+	},
 	"condition": {
 		"search": {
 			"current": -1,

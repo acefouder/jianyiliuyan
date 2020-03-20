@@ -1,0 +1,97 @@
+<!--pages/user/user.wxml-->
+<view class="container">
+
+  <!-- 用户 openid -->
+  <view class="userinfo">
+    <button 
+      open-type="getUserInfo" 
+      bindgetuserinfo="onGetUserInfo"
+      class="userinfo-avatar"
+      style="background-image: url({{avatarUrl}})"
+      size="default"
+    ></button>
+    <view class="userinfo-nickname-wrapper">
+      <button class="userinfo-nickname" bindtap="onGetOpenid">点击获取头像</button>
+      <!-- <text class="userinfo-nickname">{{userInfo.nickName}}</text> -->
+    </view>
+  </view>
+
+
+  <!-- 上传图片 -->
+   <view class="userinfo">
+    <button 
+     open-type="share"
+      type='primary'
+      class="userinfo-avatar"
+      style="background-image: url(https://7465-text12-ced5h-1301394136.tcb.qcloud.la/fanhui.jpg?sign=e2c12100e8c7ff13f8559cd4efe6fda1&t=1584618693)"
+      size="default"
+    ></button>
+    <view class="userinfo-nickname-wrapper">
+      <button class="userinfo-nickname">好友分享</button>
+    </view>
+  </view>
+
+
+  <!-- 操作数据库 -->
+    <view class="userinfo">
+    <button 
+      bindtap="goNext"
+      type='primary'
+      class="userinfo-avatar"
+      style="background-image: url(https://7465-text12-ced5h-1301394136.tcb.qcloud.la/shoucang.jpg?sign=f61fa08a08ded740e44c899d655f134e&t=1584618749)"
+      size="default"
+    ></button>
+    <view class="userinfo-nickname-wrapper">
+      <button class="userinfo-nickname">收藏区域</button>
+    </view>
+  </view>
+
+  <!-- 意见反馈 -->
+   <view class="userinfo">
+    <button 
+      bindtap="goText"
+      type='primary'
+      class="userinfo-avatar"
+      style="background-image: url(https://7465-text12-ced5h-1301394136.tcb.qcloud.la/qingli.jpg?sign=f89870964abc786bfa18c36d32ced09c&t=1584618716)"
+      size="default"
+    ></button>
+    <view class="userinfo-nickname-wrapper">
+      <button class="userinfo-nickname">游戏帮助</button>
+    </view>
+  </view>
+ 
+
+  <!-- 新建云函数 -->
+    <view class="userinfo">
+    <button 
+      open-type="feedback" 
+      type='primary'
+      class="userinfo-avatar"
+      style="background-image: url(https://7465-text12-ced5h-1301394136.tcb.qcloud.la/xinxi.jpg?sign=a0d0338da3f3136e43240299eabfb413&t=1584618677)"
+      size="default"
+    ></button>
+    <view class="userinfo-nickname-wrapper">
+      <button class="userinfo-nickname">意见反馈</button>
+    </view>
+  </view>
+
+  <!-- 云调用 -->
+    <view class="userinfo">
+    <button 
+      open-type="submit" 
+      type='primary'
+      class="userinfo-avatar"
+      style="background-image: url(https://7465-text12-ced5h-1301394136.tcb.qcloud.la/more.jpg?sign=9143b58d4bc727b3fa20007ab4283d64&t=1584618554)"
+      size="default"
+      bindtap="buttonTap"
+    ></button>
+    <view class="userinfo-nickname-wrapper">
+      <button class="userinfo-nickname">更多功能</button>
+    </view>
+    <modal title="敬请期待" hidden="{{modalHidden}}" bindconfirm="modalConfirm" bindcancel="modalCandel">
+      <view class='tctext'>正在开发中...</view>
+    </modal>
+  </view>
+
+
+</view>

@@ -1,0 +1,76 @@
+<!--pages/gnuemsgPages/gnuemsgPages.wxml-->
+
+<!-- 留言按钮 -->
+
+<van-cell wx:if='{{authority}}' label="您是管理员，可编辑留言，点击此处可复制页面路径" bindtap='copyPage' />
+<van-cell wx:if='{{authority}}' label="您是管理员，可轻点此处生成当前页面小程序码~" bindtap='getQ' />
+
+
+<van-skeleton title avatar row="3" loading="{{loading}}">
+  <!-- 普通板块 -->
+  <block wx:for="{{msgList}}" wx:key="_id" wx:if='{{!item.top}}'>
+    <view class="msgContent">
+
+      <view class='msgText'>
+        <text class='nameTitle'>{{item.title}}</text>
+      </view>
+
+      <!--广告-->
+      <ad unit-id="adunit-b52dd100f44b661f"></ad>
+
+      <!-- 头像部分 -->
+      <view class='msgText'>
+        <text class='nameText'>{{item.text1}}</text>
+      </view>
+      <view class="imgView">
+        <image src="{{item.imageSrc1}}" class="headImg"></image>
+      </view>
+      <!-- 内容部分 -->
+      <view class='msgText'>
+        <text class='nameText'>{{item.text2}}</text>
+      </view>
+      <view class="imgView">
+        <image src="{{item.imageSrc2}}" class="headImg"></image>
+      </view>
+
+      <view class='msgText'>
+        <text class='nameText'>{{item.text3}}</text>
+      </view>
+      <view class="imgView">
+        <image src="{{item.imageSrc3}}" class="headImg"></image>
+      </view>
+
+      <view class='msgText'>
+        <text class='nameText'>{{item.text4}}</text>
+      </view>
+
+      <view class="imgView">
+        <image src="{{item.imageSrc4}}" class="headImg"></image>
+      </view>
+
+      <view class='msgText'>
+        <text class='nameText'>{{item.text5}}</text>
+      </view>
+
+      <view class="imgView">
+        <image src="{{item.imageSrc5}}" class="headImg"></image>
+      </view>
+      
+
+
+    </view>
+  </block>
+</van-skeleton>
+<!--底部菜单按钮-->
+<view class="bttombut">
+  <view>
+    <navigator open-type="switchTab" url="../index/index">
+      <button class="left">首页</button>
+    </navigator>
+  </view>
+  <view>
+    <navigator open-type="switchTab" url="../gnue/gnue">
+      <button class="right">攻略</button>
+    </navigator>
+  </view>
+</view>

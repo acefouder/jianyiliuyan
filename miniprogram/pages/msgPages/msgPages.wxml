@@ -11,6 +11,9 @@
 <van-cell wx:if='{{authority}}' label="您是管理员，可编辑留言，点击此处可复制页面路径" bindtap='copyPage'/>
 <van-cell wx:if='{{authority}}' label="您是管理员，可轻点此处生成当前页面小程序码~" bindtap='getQ'/>
 
+<!--广告-->
+<ad unit-id="adunit-f40ea50fcee20c2d"></ad>
+
 <!-- 留言内容 -->
 <van-skeleton
   title

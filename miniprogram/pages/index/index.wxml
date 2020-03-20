@@ -8,7 +8,9 @@
   bindtap="showPopup"
   >新建留言板</van-button>
 </view>
-<text class='remind' style="margin:30rpx">留言评论请文明用语</text>
+
+<text class='remind' style="margin:30rpx">💿💿忆涵粉丝专区💿💿</text>
+
 
 <!-- 新建弹窗 -->
 <van-popup
@@ -57,9 +59,28 @@
 </swiper-item>
 </swiper>
 
-<navigator url="../about/about">
-    <van-cell title="留言墙小程序合作" label="留言小程序，助力于打通作者与粉丝的交流，有兴趣的朋友可以合作，非诚勿扰"/>
-  </navigator> <!-- -->
+<!-- <navigator url="../about/about">
+    <van-cell title="小程序合作" label="留言小程序，简单功能大大用处，有兴趣的朋友可以合作，非诚勿扰"/>
+  </navigator>  -->
+  <navigator url="../gnuemsgPages/gnuemsgPages?id=d7e7dede5e73aa55000812eb22051aac">
+   <van-cell title="迷你世界体验服" label="迷你世界不定时会开放体验服，只要满足体验服登陆的条件，便可以比其他人提前体验新版游戏。"/>
+ </navigator> 
+
+ <!--广告-->
+ <ad unit-id="adunit-5992262764c6138b"></ad>
+
+ <navigator url="../gnuemsgPages/gnuemsgPages?id=355d7bae5e73adf7000635fa4f7300bc">
+   <van-cell title="迷你世界三段跳教学" label="迷你世界他一直有着许多玩法的及模式，可是不少玩了好久的玩家还不会2段跳和3段跳，更不要说四段跳了"/>
+ </navigator> 
+
+  <navigator url="../gnuemsgPages/gnuemsgPages?id=9a393e025e73aff00007c14530a9b176">
+   <van-cell title="迷你世界雪域守望活动" label="《迷你世界》已经四周年了，在周年之际游戏开了雪域守望，还跟公益机构开启了世界守护计划。"/>
+ </navigator> 
+
+  <navigator url="../gnuemsgPages/gnuemsgPages?id=ae7e55b35e73b21e000926416f5ed537">
+   <van-cell title="迷你世界四周年皮肤奖励" label="四周年世界守护计划的主题是雪域守望。主要是对雪豹进行观察保护，保护野生动物，义不容辞"/>
+ </navigator> 
+
 
 <!-- 页面列表 -->
 <van-skeleton

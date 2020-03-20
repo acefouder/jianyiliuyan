@@ -1,0 +1,59 @@
+/* pages/gnuemsgPages/gnuemsgPages.wxss */
+
+.nameTitle{
+  display: flex;
+  justify-content: center;  
+   margin-top: 5px;
+  margin-bottom: 5px;
+  color: rgb(206, 100, 100);
+  width: 90%;
+  font-size: 16px;
+}
+
+.msgText{
+  display: flex;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: rgb(126, 67, 67);
+  width: 90%;
+  font-size: 14px;
+}
+
+
+.imgView{
+  display: flex;
+  justify-content: center;
+  height: 200px;
+  margin-left: 10px;
+  margin-right: 10px;
+  
+}
+.imgView image{
+  height: 100%;
+  width:100%;
+}
+.bttombut{
+  margin-top: 40rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+.left{
+  font-family: "楷体";
+  margin-left: 30px;
+  background-color: rgb(204, 202, 202);
+  border-radius: 98rpx;
+
+}
+.right{
+  font-family: "楷体";
+  margin-right: 30px;
+  background-color: rgb(204, 202, 202);
+  border-radius: 98rpx;
+  
+}
+

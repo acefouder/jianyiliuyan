@@ -2,11 +2,10 @@
 
 <view class='aboutbo'>
 
-  <text class='hztitle' style="margin:30rpx">留言小程序合作意向</text>
-  <text class='abcont'>小程序大致的功能：\n小程序有用户页面和管理员页面\n用户只有留言、点赞和删除功能\n管理员可新建不同的留言界面\n对用户留言进行回复、置顶和删除\n自动复制页面路径和生成路径的二维码\n用户只能通过不同的路径进入留言页面\n小程序合作的三种方式：\n免费试用、长期代理、独立开发\n如有意愿，请点击下方联系我们
-</text>
+  <text class='hztitle' style="margin:30rpx">我的收藏</text>
+  <text class='abcont'>暂无收藏</text>
 
-   <!-- <view class='container'>
+  <!-- <view class='container'>
 
     <button class='button' bindtap='buttonTap' type='primary'>联系我们</button>
     <modal title="我是标题" hidden="{{modalHidden}}" bindconfirm="modalConfirm" bindcancel="modalCandel">
@@ -16,19 +15,15 @@
       <view>You say that you love rain</view>
     </modal>
   </view>-->
- 
 
- <view class='submitBtnView' style="margin:30rpx">
-      <button type="primary" formType="submit" plain="true" bindtap="buttonTap">联系我们</button>
-    <modal title="保存二维码" hidden="{{modalHidden}}" bindconfirm="modalConfirm" bindcancel="modalCandel">
+
+  <view class='submitBtnView' style="margin:30rpx">
+    <button type="primary" formType="submit" plain="true" bindtap="openVideoAd" class="tcbtn">联系作者</button>
+    <modal title="扫码识别" hidden="{{modalHidden}}" bindconfirm="modalConfirm" bindcancel="modalCandel">
       <view class="tanchuan">
         <image class="image" src="../../image/lianxi.jpg" mode='aspectFill'></image>
       </view>
-      <view class='tctext'>添加请备注：小程序合作</view>
+      <view class='tctext'>备注：先保存，再扫码</view>
     </modal>
-   
-   
-    </view>
-
-
+  </view>
 </view>

@@ -1,0 +1,80 @@
+<!--pages/gnue/gnue.wxml-->
+<!-- 新建按钮 -->
+<view class="newBtn" wx:if='{{authority}}'>
+  <van-button
+  type="primary" 
+  size="large"
+  plain
+  round
+  bindtap="showPopup"
+  >新增攻略</van-button>
+</view>
+<text class='remind' style="margin:30rpx">💿💿迷你世界攻略💿💿</text>
+
+<!-- 新建弹窗 -->
+<van-popup
+  show="{{ show }}" 
+  bind:close="onClose"
+  position="top"
+  custom-style="height: 50%;"
+  round
+  closeable
+ >
+  <form bindsubmit="onSubmit">
+    <view class="writeView">
+      <van-cell title="创建攻略页面"/>
+      <view class="textArea">
+        <textarea
+          value="{{textValue}}"
+          style="height: 2em" 
+          placeholder="请输入页面标题" 
+          placeholder-style="color:gray;"
+          name="pageName"/>
+      </view>
+      <view class="textArea">
+        <textarea
+          value="{{textValue}}"
+          style="height: 3em" 
+          placeholder="请输入页面描述" 
+          placeholder-style="color:gray;"
+          name="pageDiscribe"/>
+      </view>
+    </view>
+    <view class='submitBtnView'>
+      <button type="primary" formType="submit" plain="true">确认</button>
+    </view>
+  </form>
+</van-popup>
+<!-- 轮播图页面列表 -->
+<swiper class='lunbo' indicator-dots="true" autoplay="true" interval="3000" circular="true">
+<swiper-item>
+<image src="/image/gnue0.jpg"></image>
+</swiper-item>
+<swiper-item>
+<image src="/image/gnue1.jpg"></image>
+</swiper-item>
+<swiper-item>
+<image src="/image/gnue2.jpg"></image>
+</swiper-item>
+</swiper>
+
+<!--广告-->
+<ad unit-id="adunit-04c85fbe929ab9a6"></ad>
+
+<!-- 页面列表 -->
+<van-skeleton
+  title
+  row="10"
+  loading="{{loading}}"
+>
+
+
+  <block wx:for='{{pageList}}' wx:key="_id" > 
+   <!--wx:if='{{authority}}' 判断是否需要管理员才显示列表-->
+    <navigator url="../gnuemsgPages/gnuemsgPages?id={{item._id}}">
+      <van-cell title="{{item.name}}" label="{{item.discribe}}"/>
+    </navigator>
+  </block>
+</van-skeleton>
+
+

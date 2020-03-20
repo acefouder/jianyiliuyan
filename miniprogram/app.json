@@ -2,6 +2,10 @@
   "pages": [
     "pages/index/index",
     "pages/msgPages/msgPages",
+    "pages/user/user",
+    "pages/gnue/gnue",
+    "pages/gnuemsgPages/gnuemsgPages",
+    "pages/touxiang/touxiang",
     "pages/about/about"
   ],
   "window": {
@@ -12,6 +16,33 @@
     "navigationBarTextStyle": "black",
     "enablePullDownRefresh": true
   },
+
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#8a8a8a",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "image/shou_st.png",
+        "iconPath": "image/shou.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+        {
+          "selectedIconPath": "image/gnue_st.png",
+          "iconPath": "image/gnue.png",
+          "pagePath": "pages/gnue/gnue",
+          "text": "攻略"
+        },
+      {
+        "selectedIconPath": "image/user_st.png",
+        "iconPath": "image/user.png",
+        "pagePath": "pages/user/user",
+        "text": "我的"
+      }
+    ]
+  },
+
   "usingComponents": {
     "van-button": "@vant/weapp/button",
     "van-popup": "@vant/weapp/popup",
@@ -21,6 +52,7 @@
     "van-tag": "@vant/weapp/tag",
     "van-icon": "@vant/weapp/icon"
   },
+
   "sitemapLocation": "sitemap57.json"
   
 }

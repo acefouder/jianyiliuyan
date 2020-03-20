@@ -1,7 +1,73 @@
+// // pages/gnue/gnue.js
+// Page({
+
+//   /**
+//    * 页面的初始数据
+//    */
+//   data: {
+
+//   },
+
+//   /**
+//    * 生命周期函数--监听页面加载
+//    */
+//   onLoad: function (options) {
+
+//   },
+
+//   /**
+//    * 生命周期函数--监听页面初次渲染完成
+//    */
+//   onReady: function () {
+
+//   },
+
+//   /**
+//    * 生命周期函数--监听页面显示
+//    */
+//   onShow: function () {
+
+//   },
+
+//   /**
+//    * 生命周期函数--监听页面隐藏
+//    */
+//   onHide: function () {
+
+//   },
+
+//   /**
+//    * 生命周期函数--监听页面卸载
+//    */
+//   onUnload: function () {
+
+//   },
+
+//   /**
+//    * 页面相关事件处理函数--监听用户下拉动作
+//    */
+//   onPullDownRefresh: function () {
+
+//   },
+
+//   /**
+//    * 页面上拉触底事件的处理函数
+//    */
+//   onReachBottom: function () {
+
+//   },
+
+//   /**
+//    * 用户点击右上角分享
+//    */
+//   onShareAppMessage: function () {
+
+//   }
+// })
 //连接数据库
 let interstitialAd = null
 const db = wx.cloud.database();
-const msgpages = db.collection("msgpages");
+const msgpages = db.collection("gnuemsgpages");
 const author = db.collection("author");
 Page({
 
@@ -12,7 +78,7 @@ Page({
     textValue: "",
     loading: true,  //是否正在加载
 
-    pageList:[]
+    pageList: []
   },
 
   //提交创建新页面
@@ -42,7 +108,7 @@ Page({
     wx.cloud.callFunction({
       name: 'getData',
       data: {
-        db: 'msgpages',
+        db: 'gnuemsgpages',
         id: null,
       }
     }).then(res => {
@@ -82,15 +148,16 @@ Page({
   onLoad: function (options) {
     this.getData();
     this.authentication();
-//插屏广告
-    // if (wx.createInterstitialAd) {
-    //   interstitialAd = wx.createInterstitialAd({
-    //     adUnitId: 'adunit-088b289e55a4b378'
-    //   })
-    //   interstitialAd.onError(err => {
-    //     console.log(err);
-    //   })
-    // }
+    //广告插入
+    if (wx.createInterstitialAd) {
+      interstitialAd = wx.createInterstitialAd({
+        adUnitId: 'adunit-77466f32adebd6c4'
+      })
+   
+    }
+
+
+
   },
 
   onPullDownRefresh: function () {
@@ -111,11 +178,15 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    // if (interstitialAd) {
-    //   interstitialAd.show().catch((err) => {
-    //     console.error(err)
-    //   })
-    // }
+    if (interstitialAd) {
+      interstitialAd.show().catch((err) => {
+        console.error(err)
+      });
+    
+    interstitialAd.onError(err => {
+      console.log(err);
+    })
+  }
   },
 
   /**
